@@ -1,0 +1,56 @@
+:root {
+    --borderColor: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: sans-serif;
+
+}
+
+body {
+    overflow: hidden;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: rgb(26, 7, 58);
+}
+
+.animation-element {
+    display: inline-block;
+    position: absolute;
+    width: 10vw;
+    height: 200vh;
+    margin-top: -100vh;
+    filter: drop-shadow(0px 0px 5px black);
+    border: 0.2rem solid var(--borderColor);
+    will-change: rotate, transform;
+}
+
+.sliding {
+    animation: spin 5s ease-in infinite;
+}
+
+@keyframes spin {
+    from {
+        rotate: 0;
+        transform: translateX(0);
+    }
+    to {
+        rotate: 25deg;
+        transform: translateX(180vw);
+    }
+}
